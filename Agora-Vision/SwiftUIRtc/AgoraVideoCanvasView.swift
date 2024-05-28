@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 #if os(iOS) || os(visionOS)
 public typealias ViewClassAlias = UIView
 public typealias ViewRepresentable = UIViewRepresentable
@@ -13,6 +14,7 @@ public typealias ViewRepresentable = UIViewRepresentable
 public typealias ViewClassAlias = NSView
 public typealias ViewRepresentable = NSViewRepresentable
 #endif
+
 import AgoraRtcKit
 
 /// 🎥 AgoraRtcVideoCanvas must have the `ObservableObject` protocol applied,
@@ -209,25 +211,15 @@ public struct AgoraVideoCanvasView: ViewRepresentable {
 
     // MARK: - Setup
 
-    #if os(macOS)
-    /// Creates and configures an `NSView` for the view. This NSView will be the view the video is rendered onto.
-    ///
-    /// - Parameter context: The `NSViewRepresentable` context.
-    ///
-    /// - Returns: An `NSView` for displaying the video stream.
-    public func makeNSView(context: Context) -> NSView {
-        setupCanvasView()
-    }
-    #elseif os(iOS) || os(visionOS)
     /// Creates and configures a `UIView` for the view. This UIView will be the view the video is rendered onto.
     ///
     /// - Parameter context: The `UIViewRepresentable` context.
     ///
     /// - Returns: A `UIView` for displaying the video stream.
-    public func makeUIView(context: Context) -> UIView {
-        setupCanvasView()
+    public func makeUIView(context: Context) -> ViewClassAlias {
+        return setupCanvasView()
     }
-    #endif
+    
     private func setupCanvasView() -> ViewClassAlias {
         // Create and return the remote video view
         let canvasView = ViewClassAlias()
@@ -258,15 +250,8 @@ public struct AgoraVideoCanvasView: ViewRepresentable {
     }
 
     /// Updates the Canvas view.
-    #if os(iOS) || os(visionOS)
     /// 🔄 Updates the `UIView` for the view.
-    public func updateUIView(_ uiView: UIView, context: Context) {
+    public func updateUIView(_ uiView: ViewClassAlias, context: Context) {
         self.updateCanvasValues()
     }
-    #elseif os(macOS)
-    /// 🔄 Updates the `NSView` for the view.
-    public func updateNSView(_ nsView: NSView, context: Context) {
-        self.updateCanvasValues()
-    }
-    #endif
 }
