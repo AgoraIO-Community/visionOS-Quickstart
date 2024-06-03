@@ -35,9 +35,18 @@ open class AgoraManager: NSObject, ObservableObject, AgoraRtcEngineDelegate {
     ///
     /// - Returns: The configured AgoraRtcEngineKit instance.
     open func engineSetup() -> AgoraRtcEngineKit {
-        let eng = AgoraRtcEngineKit.sharedEngine(withAppId: appId, delegate: self)
+        let config: AgoraRtcEngineConfig = AgoraRtcEngineConfig()
+        config.appId = appId
+        
+        // For this version of the SDK, it is required that these profile setting are used
+        config.audioScenario = .gameStreaming
+        config.channelProfile = .liveBroadcasting
+        
+        let eng = AgoraRtcEngineKit.sharedEngine(with:config , delegate: self)
         eng.enableVideo()
         eng.setClientRole(role)
+        let version = AgoraRtcEngineKit.getSdkVersion()
+        print ("Agora Video SDK version:" + version)
         return eng
     }
 
@@ -115,6 +124,7 @@ open class AgoraManager: NSObject, ObservableObject, AgoraRtcEngineDelegate {
         if self.role == .broadcaster {
             self.allUsers.insert(uid)
         }
+        print ("user did joined channel: " + String(uid))
     }
 
     /// 📞 A remote user has joined the channel.
@@ -127,6 +137,7 @@ open class AgoraManager: NSObject, ObservableObject, AgoraRtcEngineDelegate {
     /// This method adds the remote user to the `allUsers` set.
     open func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         self.allUsers.insert(uid)
+        print ("user uid joined channel: " + String(uid))
     }
 
     /// 📞 A remote user has left the channel.
@@ -139,5 +150,6 @@ open class AgoraManager: NSObject, ObservableObject, AgoraRtcEngineDelegate {
     /// This method removes the remote user from the `allUsers` set.
     open func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
         self.allUsers.remove(uid)
+        print ("user left channel: " + String(uid))
     }
 }
