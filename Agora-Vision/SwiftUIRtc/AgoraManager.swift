@@ -35,7 +35,14 @@ open class AgoraManager: NSObject, ObservableObject, AgoraRtcEngineDelegate {
     ///
     /// - Returns: The configured AgoraRtcEngineKit instance.
     open func engineSetup() -> AgoraRtcEngineKit {
-        let eng = AgoraRtcEngineKit.sharedEngine(withAppId: appId, delegate: self)
+        let config: AgoraRtcEngineConfig = AgoraRtcEngineConfig()
+        config.appId = appId
+        
+        // For this version of the SDK, it is required that these profile setting are used
+        config.audioScenario = .gameStreaming
+        config.channelProfile = .liveBroadcasting
+        
+        let eng = AgoraRtcEngineKit.sharedEngine(with:config , delegate: self)
         eng.enableVideo()
         eng.setClientRole(role)
         let version = AgoraRtcEngineKit.getSdkVersion()
