@@ -20,7 +20,7 @@ Before running the app, ensure you have the following:
 
 1. Clone the repository to your local machine.
 1. Open the project in Xcode.
-1. Open the ContentView.swift file and replace <#appID#> with your Agora App ID.
+1. Open the ContentView.swift file and replace <#appID#> with your test mode Agora App ID.
 1. Build and run the app on an visionOS simulator, or device.
 1. Enter a channel name in the provided text field and tap "Join Channel."
 
