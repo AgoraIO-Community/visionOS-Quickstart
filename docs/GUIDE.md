@@ -1,5 +1,6 @@
 # VisionPro Meets the World: Video Chat with Agora's Video SDK
- 
+
+ ![](/docs/images/blog_banner.webp "banner")
 
 The future is here, and you're holding it in your hands – the Apple VisionPro device. It's a marvel of technology, but sometimes, you just need to see a friendly face across the digital divide. That's where Agora's ubiquitous Real-Time Communication (RTC) SDK comes in. With Agora, video chat on your VisionPro device transcends physical boundaries. Not only can you connect with other VisionPro users, but Agora's expansive reach allows you to chat seamlessly with people on entirely different platforms. Imagine video calling your friends and family on their smartphones, tablets, or laptops – all through the power of Agora on your VisionPro. This quick start guide will equip you to unlock the potential of Agora's native RTC SDK and transform your VisionPro into a powerful video chat hub. 
 
