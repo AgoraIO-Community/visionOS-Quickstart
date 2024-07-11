@@ -2,7 +2,7 @@
 
  ![](/docs/images/blog_banner.webp "banner")
 
-The future is here, and you're holding it in your hands – the Apple VisionPro device. It's a marvel of technology, but sometimes, you just need to see a friendly face across the digital divide. That's where Agora's ubiquitous Real-Time Communication (RTC) SDK comes in. With Agora, video chat on your VisionPro device transcends physical boundaries. Not only can you connect with other VisionPro users, but Agora's expansive reach allows you to chat seamlessly with people on entirely different platforms. Imagine video calling your friends and family on their smartphones, tablets, or laptops – all through the power of Agora on your VisionPro. This quick start guide will equip you to unlock the potential of Agora's native RTC SDK and transform your VisionPro into a powerful video chat hub. 
+The future is here, and you're holding it – the Apple VisionPro device. It's a marvel of technology, but sometimes, you just need to see a friendly face across the digital divide. That's where Agora's ubiquitous Real-Time Communication (RTC) SDK comes in. With Agora, video chat on your VisionPro device transcends physical boundaries. You can connect with other VisionPro users, and Agora's expansive reach allows you to chat seamlessly with people on entirely different platforms. Imagine video calling your friends and family on their smartphones, tablets, or laptops – all through the power of Agora on your VisionPro. This quick start guide will equip you to unlock the potential of Agora's native RTC SDK and transform your VisionPro into a powerful video chat hub. 
 
 > If you are a Unity developer, you may refer to [this blog](https://www.agora.io/en/blog/vision-pro-unity-quickstart-with-agora-sdk/) for the corresponding quick start guide.
 
@@ -20,7 +20,7 @@ The future is here, and you're holding it in your hands – the Apple VisionPro 
 2. Open the project with Xcode.
 3. Import the Agora SDK plugin. The project includes the Agora SDK as a dependency package. As soon as Xcode loads the project, the package download should start automatically and finish in a few minutes.
 
-If the package did not load for some reason, e.g. networking issues, or you are set up a brand new project of your own, see the following information to cover package manager, CDN and cocoapods.
+If the package did not load for some reason, e.g. networking issues, or you are setting up a brand new project of your own, see the following information to cover the package manager, CDN, and cocoapods.
 
 1. To manually add the package to your Xcode project, put the specific branch of the git location as the dependency:
 ![](/docs/images/blog_avp1_branch.png "package location")
@@ -64,7 +64,7 @@ Before building your project to the device, Add the following keys to your Info.
   
 ![](/docs/images/blog_avp5_plist.png "plist")
 
-You should confirm your permission for allowing the app to use your VisionPro’s camera and microphone. Once you join the channel, you should see yourself in your avatar form and the remote user should show up on your screen!
+You should confirm your permission to allow the app to use your VisionPro’s camera and microphone. Once you join the channel, you should see yourself in your avatar form and the remote user should show up on your screen!
 
 ![](/docs/images/blog_avp6_device.gif "device")
 
@@ -104,7 +104,7 @@ You should see the code follows the logic flow described in the [official docume
 ```swift
 		self.agoraEngine.leaveChannel(leaveChannelBlock)
 ```
-* Dispose the engine
+* Dispose of the engine
 ```swift
 		AgoraRtcEngineKit.destroy()
 ```
