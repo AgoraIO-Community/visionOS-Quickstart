@@ -8,12 +8,12 @@
 import SwiftUI
 import AgoraRtcKit
 
-struct VisionVideoCall: View {
+struct VisionVideoCallView: View {
 
     var channel: String
 
     @ObservedObject private var agoraManager = AgoraManager(
-        appId: "<#appID#>", role: .broadcaster
+        appId: "00e97fd319264c1ea2be69a370bd712e", role: .broadcaster
     )
 
     var body: some View {
