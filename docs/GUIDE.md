@@ -161,6 +161,9 @@ AgoraManager -x AgoraManager : remove all users
 
 
 
+### Local Camera Stream
+If you are an experienced Agora developer, you may see all the APIs are the same as you've done in implementing an iOS app.   You may wonder - how do I create a stream to capture my Avatar from the VisionPro? The answer is you don't need to.  The beauty of the visionOS is that - your avatar rendering frames are used for your local camera's view.  Therefore, without any change to the API calls, you get the same behavior to stream your local camera view!   
+
 
 ## Conclusion
 
