@@ -1,4 +1,4 @@
-# VisionPro Meets the World: Video Chat with Agora's Video SDK
+# Quickstart: Add Video Chat to Vision Pro with Agora
 
  ![](/docs/images/blog_banner.webp "banner")
 
