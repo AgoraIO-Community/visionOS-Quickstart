@@ -25,13 +25,13 @@ struct ContentView: View {
                     .padding(.bottom, 50)
                 TextField("Channel name", text: $channelName)
                     .textInputAutocapitalization(.never)
-                    .frame(maxWidth: 200).padding(5)
+                    .frame(maxWidth: 200, maxHeight: 10).padding(5)
                     .overlay(
                         RoundedRectangle(cornerRadius: 5)
                             .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0))
                     )
                 NavigationLink(destination: {
-                    NavigationLazyView(VisionVideoCall(channel: channelName))
+                    NavigationLazyView(VisionVideoCallView(channel: channelName))
                 }, label: {
                     Text("Join Channel")
                 }).disabled(channelName.isEmpty)
